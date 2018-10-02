@@ -11,15 +11,11 @@ const rollDice = dice => sides => {
   let count = 0;
   let individualRolls = [];
   for (i = 0; i < dice; i++) {
-    let roll = getRandomNumber(sides);
+    let roll = Math.ceil(Math.random() * Math.floor(sides));
     count += roll;
     individualRolls.push(roll);
   }
   return { count, individualRolls };
-};
-
-const getRandomNumber = max => {
-  return Math.ceil(Math.random() * Math.floor(max));
 };
 
 inputArray.forEach(input => {
