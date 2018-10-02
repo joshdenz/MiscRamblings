@@ -9,13 +9,13 @@ const inputArray = ['5d12', '6d4', '1d2', '1d8', '3d6', '4d20', '100d100'].map(i
 
 const rollDice = dice => sides => {
   let count = 0;
-  let individualRoles = [];
+  let individualRolls = [];
   for (i = 0; i < dice; i++) {
     let roll = getRandomNumber(sides);
     count += roll;
-    individualRoles.push(roll);
+    individualRolls.push(roll);
   }
-  return { count, individualRoles };
+  return { count, individualRolls };
 };
 
 const getRandomNumber = max => {
@@ -23,8 +23,8 @@ const getRandomNumber = max => {
 };
 
 inputArray.forEach(input => {
-  let { count, individualRoles } = rollDice(input[0])(input[1]);
-  console.log(`${count}: ${individualRoles}`);
+  let { count, individualRolls } = rollDice(input[0])(input[1]);
+  console.log(`${count}: ${individualRolls}`);
 });
 
 /**
